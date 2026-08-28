@@ -1,5 +1,6 @@
 /** Strategy (Part 2): ลดราคาเป็นเปอร์เซ็นต์ เช่น new PercentageDiscount(10) = ลด 10% */
 public class PercentageDiscount implements DiscountStrategy {
+
     private final double percent;
 
     public PercentageDiscount(double percent) {
@@ -12,6 +13,8 @@ public class PercentageDiscount implements DiscountStrategy {
         double total = order.getTotalPrice();
         // TODO (2a): คืนราคาหลังหักส่วนลด percent%
         //   hint: total - (total * percent / 100.0)
-        return /* ====== replace this ====== */ total;
+        total = total - (total*percent/100) ;
+               /* ====== replace this ====== */ 
+        return total;
     }
 }
